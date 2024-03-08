@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-c",
+      "-I/opt/homebrew/opt/openjdk@17/include",
+      "-o",
+      "truncation",
+      "truncation.c"
+    ],
+    "directory": "/Users/kyu08/code/cs50/lecture1-c",
+    "file": "/Users/kyu08/code/cs50/lecture1-c/truncation.c",
+    "output": "/Users/kyu08/code/cs50/lecture1-c/truncation"
+  }
+]
