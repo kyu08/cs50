@@ -29,3 +29,33 @@ int main(void) {
 
 void meow(void) { printf("meow\n"); }
 ```
+
+## 文字列
+文字列を操作する際は終端文字に注意。
+この関数のように、最初に値を束縛せずに文字列を初期化した際は終端文字を自分で追加する必要がある。
+
+```c
+void print_bricks(int height) {
+  char separator[] = "  ";
+  for (int i = 0; i < height; i++) {
+    char left_bricks[height + 1];  // 終端文字の分で+1している
+    char right_bricks[height + 1];
+
+    for (int j = 0; j < height; j++) {
+      if ((height - j) <= (i + 1)) {
+        // 末尾からi+1番目までを#で埋める。height - j: 末尾から何番目かを示す
+        left_bricks[j] = '#';
+        // leftの逆
+        right_bricks[height - j - 1] = '#';
+      } else {
+        left_bricks[j] = ' ';
+      }
+    }
+
+    left_bricks[height] = '\0';   // 終端文字を追加
+    right_bricks[height] = '\0';  // 終端文字を追加
+
+    printf("%s%s%s\n", left_bricks, separator, right_bricks);
+  }
+}
+```
