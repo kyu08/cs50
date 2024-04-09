@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
   FILE *output = fopen(argv[2], "w");
   if (output == NULL) {
     printf("Could not open file.\n");
+    fclose(input);
     return 1;
   }
 
