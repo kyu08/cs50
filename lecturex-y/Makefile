@@ -6,6 +6,10 @@ run:
 	clang $(ARG).c -o ./$(TARGET)/$(ARG) -lcs50 \
 	&& ./$(TARGET)/$(ARG)
 
+.PHONY: lint
+lint:
+	cppcheck --quiet .
+
 .PHONY: clean
 clean:
 	rm -fr ./$(TARGET)/* 
